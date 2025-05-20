@@ -1,7 +1,7 @@
 from openai import OpenAI
 
-# Initialize the OpenAI client with your API token
-client = OpenAI(api_key="sk-6730797685e8475392411913b3a9bb04")  # Replace with your actual API token
+# Initialize the OpenAI client
+client = OpenAI(api_key="sk-6730797685e8475392411913b3a9bb04")  # Replace with your actual API key
 
 def call_deepseek_reasoner(prompt):
     try:
@@ -17,9 +17,15 @@ def call_deepseek_reasoner(prompt):
     except Exception as e:
         return f"Error calling API: {e}"
 
-# Example usage
+# Usage
 if __name__ == "__main__":
-    user_prompt = "Explain quantum computing in simple terms."
-    answer = call_deepseek_reasoner(user_prompt)
-    print("DeepSeek Reasoner's Response:")
-    print(answer)
+    print("Welcome to DeepSeek Reasoner! Type your prompt below (or 'exit' to quit).")
+    while True:
+        user_prompt = input("\nYour prompt: ")
+        if user_prompt.lower() in ['exit', 'quit']:
+            print("Goodbye!")
+            break
+        
+        answer = call_deepseek_reasoner(user_prompt)
+        print("\nDeepSeek Reasoner's Response:")
+        print(answer)
