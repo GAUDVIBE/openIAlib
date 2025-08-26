@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 # Initialize the OpenAI client
-client = OpenAI(api_key="sk-6730797685e8475392411913b3a9bb04")  # Replace with your actual API key
+client = OpenAI(api_key="sk-12341234")  # Replace with your actual API key
 
 def call_deepseek_reasoner(prompt):
     try:
